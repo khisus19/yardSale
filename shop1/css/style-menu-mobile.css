@@ -20,11 +20,32 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 .mobile-menu {
-    padding: 24px;
+    padding: 10px;
+    width: 96%;
+}
+.mobile-menu ul {
+    list-style: none;
+    margin-bottom: 35px;
+}
+.mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu li {
+    margin-bottom: 30px;
 }
 .mobile-menu a {
     text-decoration: none;
     color: var(--black);
     font-weight: bold;
     margin-bottom: 24px;
+}
+.mobile-menu .user li {
+    margin: 10px 0;
+    font-size: var(--sm);
+}
+.mobile-menu .email {
+    font-weight: 300;
+}
+.mobile-menu .sign-out {
+    color: var(--hospital-green);
 }
