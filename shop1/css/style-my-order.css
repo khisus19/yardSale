@@ -1,8 +1,8 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
-
 :root{
     --white: #FFFFFF;
     --black: #000000;
@@ -15,36 +15,37 @@
     --lg: 18px;
 }
 body {
-    
     font-family: 'Quicksand', sans-serif;
 }
 
+/* Contenedor del Menu */
 .my-order {
     width: 380px;
-    margin: 10px auto;
+    margin: 50px auto;
 }
 .my-order-container {
     padding: 10px;
     margin: 0 auto;
 }
 
-/* Primera Sección */
+/* Primera Sección - Sección de Resumen de Compra */
 .order-total {
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    background-color: var(--very-light-pink);
+    background-color: var(--text-input-field);
     border-radius: 8px;
 }
 
 .order-date .articles-num {
     font-size: var(--sm);
     font-weight: 500;
+    color: var(--very-light-pink);
 }
 
-/* Segunda Sección */
+/* Segunda Sección - Sección de tarjetas */
 .order-list-container {
     padding: 10px 0;
     display: flex;
@@ -58,14 +59,18 @@ body {
     margin: 15px 0;
 }
 .order-list-container img {
-    width: 55px;
-    height: 55px;
-    border-radius: 14px;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
     margin-right: 15px;
+    object-fit: cover;
 }
 .order-list-container .list-item {
     display: flex;
     align-items: center;
+    color: var(--very-light-pink);
+}
+.order-list-container .item-price {
     padding-right: 15px;
 }
 .order-list-container .list-item:nth-child(1) {
