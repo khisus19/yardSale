@@ -84,11 +84,20 @@ nav {
     }
     .nav-list li {
         margin-left: 10px;
+        padding: 5px;
+    }
+    .nav-list li:hover {
+        border: 1px solid var(--hospital-green);
+        border-radius: 10px;
     }
     .nav-list li a {
         text-decoration: none;
         color: var(--very-light-pink);
     }
+    .nav-list li a:hover {
+        color: var(--hospital-green);
+        font-weight: 700;
+}
     .nav-right {
         display: flex;
         align-items: center;
