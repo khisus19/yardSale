@@ -1,7 +1,7 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 :root{
     --white: #FFFFFF;
@@ -27,6 +27,9 @@ body {
     padding: 10px;
     margin: 0 auto;
 }
+.my-order-container h1 {
+    margin: 20px auto;
+}
 
 /* Primera Sección - Sección de Resumen de Compra */
 .order-total {
@@ -48,11 +51,13 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100px;
+    font-weight: 700;
 }
 .order-total-amount .arrow {
-    width: 15px;
+    width: 10px;
     height: 15px;
     background-image: url("../icons/flechita.svg");
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    
 }
