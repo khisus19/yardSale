@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Contenedor del Menu */
+.my-order {
+    width: 380px;
+    margin: 50px auto;
+}
+.my-order-container {
+    padding: 10px;
+    margin: 0 auto;
+}
+.my-order-container h1 {
+    margin: 20px auto;
+}
+
+/* Primera Sección - Sección de Resumen de Compra */
+.order-total {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.order-date .articles-num {
+    font-size: var(--sm);
+    font-weight: 500;
+    color: var(--very-light-pink);
+}
+.order-total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    font-weight: 700;
+}
+.order-total-amount .arrow {
+    width: 10px;
+    height: 15px;
+    background-image: url("../icons/flechita.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

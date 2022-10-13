@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Contenedor del Menu */
+.my-order {
+    width: 380px;
+    margin: 50px auto;
+}
+.my-order-container {
+    padding: 10px;
+    margin: 0 auto;
+}
+.my-order-container h1 {
+    margin: 20px auto;
+}
+
+/* Primera Sección - Sección de Resumen de Compra */
+.order-total {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    background-color: var(--text-input-field);
+    border-radius: 8px;
+}
+
+.order-date .articles-num {
+    font-size: var(--sm);
+    font-weight: 500;
+    color: var(--very-light-pink);
+}
+
+/* Segunda Sección - Sección de tarjetas */
+.order-list-container {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.list-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+.order-list-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+.order-list-container .list-item {
+    display: flex;
+    align-items: center;
+    color: var(--very-light-pink);
+}
+.order-list-container .item-price {
+    padding-right: 15px;
+}
+.order-list-container .list-item:nth-child(1) {
+    font-weight: 300;
+}
