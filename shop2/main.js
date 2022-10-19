@@ -135,12 +135,16 @@ function renderProductDetailed(event) {
 }
 
 // REMOVE CART ITEMS
-const removeCartItemsButtons = document.querySelectorAll(".remove-order-item-icon");
+function addRemoveButtonsListener() {
+  const removeCartItemsButtons = document.querySelectorAll(".remove-order-item-icon");
 
-for (let i = 0; i < removeCartItemsButtons.length; i++) {
-  let button = removeCartItemsButtons[i];
-  button.addEventListener("click", removeCartItem)
+  for (let i = 0; i < removeCartItemsButtons.length; i++) {
+    let button = removeCartItemsButtons[i];
+    button.addEventListener("click", removeCartItem)
+  }
 }
+addRemoveButtonsListener()
+
 
 function removeCartItem(event){
   const buttonClicked = event.target;
@@ -197,6 +201,7 @@ function addCartItem(title, imgSource, price){
                           </div>`;
   cartItem.innerHTML = cartItemContent
   cartItemList.append(cartItem)
+  cartItemList.querySelector(".remove-order-item-icon").addEventListener("click", removeCartItem)
   updateCartTotal()
-
+  addRemoveButtonsListener()
 }
