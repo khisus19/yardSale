@@ -39,9 +39,9 @@
             </div>
             <div class="nav-right">
                 <p href="" class="navbar-email">correo@platzi.com</p>
-                <div class="shoping-cart_container">
-                    <img class="shoping-cart" src="icons/icon_shopping_cart.svg" alt="">
-                    <span class="shoping-cart_number">2</span>
+                <div class="shopping-cart_container">
+                    <img class="shopping-cart" src="icons/icon_shopping_cart.svg" alt="">
+                    <span class="shopping-cart_number">2</span>
                 </div>
             </div>
             <div class="desktop-menu inactive">
@@ -99,10 +99,10 @@
                 </ul>
             </div>
         </nav>
-        <aside class="my-order inactive">
+        <aside class="my-order">
             <div class="my-order-container">
-                <section class="order-list-container">
-                    <div class="shoping-cart-title">
+                <section class="order-list-container" id="order-list-container">
+                    <div class="shopping-cart-title">
                         <img class="left-arrow" src="icons/left-arrow.svg" alt="arrow">
                         <h2>Shopping cart</h2>
                     </div>
@@ -111,9 +111,9 @@
                             <img class="product-img" src="img/bike.jpeg" alt="Bike">
                             <p>Bike</p>
                         </div>
-                        <div class="item-price">
+                        <div class="item-price-container">
                             <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
                     </section>
                     
@@ -122,9 +122,9 @@
                             <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
                             <p>Round Shelf</p>
                         </div>
-                        <div class="item-price">
-                            <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                        <div class="item-price-container">
+                            <p>$ 80.00</p>
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
     
                         </div>
                     </section>
@@ -134,9 +134,9 @@
                             <img class="product-img" src="img/bike.jpeg" alt="Bike">
                             <p>Bike</p>
                         </div>
-                        <div class="item-price">
+                        <div class="item-price-container">
                             <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
                     </section>
                     
@@ -145,9 +145,9 @@
                             <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
                             <p>Round Shelf</p>
                         </div>
-                        <div class="item-price">
-                            <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                        <div class="item-price-container">
+                            <p>$ 80.00</p>
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
     
                         </div>
                     </section>
@@ -157,9 +157,9 @@
                             <img class="product-img" src="img/bike.jpeg" alt="Bike">
                             <p>Bike</p>
                         </div>
-                        <div class="item-price">
+                        <div class="item-price-container">
                             <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
                     </section>
                     <section class="list-item-container">
@@ -167,9 +167,9 @@
                             <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
                             <p>Round Shelf</p>
                         </div>
-                        <div class="item-price">
-                            <p>$ 120.00</p>
-                            <img class="close-icon" src="icons/icon_close.png" alt="close">
+                        <div class="item-price-container">
+                            <p>$ 80.00</p>
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
                     </section> 
                 </section>
@@ -178,7 +178,7 @@
                         <p class="total">Total</p>
                     </div>
                     <div class="order-total-amount">
-                        <p>$ 560.00</p>
+                        <p id="my-order-total">$ 560.00</p>
                     </div>
                 </section>
                 <div>
@@ -206,14 +206,14 @@
     </section>
     <aside class="product-detail inactive" id="product-detailed">
         <div class="product-container">
-            <img id="close-icon" class="close-icon" src="./icons/icon_close.png" alt="close">
+            <img id="product-detail-close-icon" class="product-detail-close-icon" src="./icons/icon_close.png" alt="close">
             <img id="product-img" class="product-img" src="" alt="round-shelf">
         </div>
         <div class="product-info">
             <p id="product-price" class="product-price">$35,00</p>
             <p id="product-title" class="product-title">Round shelf</p>
             <p id="product-description" class="product-description">With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace.</p>
-            <button class="primary-button">
+            <button class="primary-button" id="add-to-cart-button">
                 <img class="cart-img" src="icons/bt_add_to_cart.svg" alt="add to cart">
                 Add to cart
             </button>
