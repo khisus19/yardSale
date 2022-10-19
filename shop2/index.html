@@ -99,14 +99,39 @@
                 </ul>
             </div>
         </nav>
-        <aside class="my-order">
+
+        <!-- SHOPPING CART VIEW -->
+        <aside class="my-order inactive">
             <div class="my-order-container">
                 <section class="order-list-container" id="order-list-container">
                     <div class="shopping-cart-title">
                         <img class="left-arrow" src="icons/left-arrow.svg" alt="arrow">
                         <h2>Shopping cart</h2>
                     </div>
+                    <!-- <section class="list-item-container">
+                        <div class="list-item">
+                            <img class="product-img" src="img/bike.jpeg" alt="Bike">
+                            <p>Bike</p>
+                        </div>
+                        <div class="item-price-container">
+                            <p>$119.99</p>
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
+                        </div>
+                    </section>
+                    
                     <section class="list-item-container">
+                        <div class="list-item">
+                            <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
+                            <p>Round Shelf</p>
+                        </div>
+                        <div class="item-price-container">
+                            <p>$79.99</p>
+                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
+    
+                        </div>
+                    </section> -->
+                    
+                    <!-- <section class="list-item-container">
                         <div class="list-item">
                             <img class="product-img" src="img/bike.jpeg" alt="Bike">
                             <p>Bike</p>
@@ -139,29 +164,6 @@
                             <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
                     </section>
-                    
-                    <section class="list-item-container">
-                        <div class="list-item">
-                            <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
-                            <p>Round Shelf</p>
-                        </div>
-                        <div class="item-price-container">
-                            <p>$ 80.00</p>
-                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
-    
-                        </div>
-                    </section>
-                    
-                    <section class="list-item-container">
-                        <div class="list-item">
-                            <img class="product-img" src="img/bike.jpeg" alt="Bike">
-                            <p>Bike</p>
-                        </div>
-                        <div class="item-price-container">
-                            <p>$ 120.00</p>
-                            <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
-                        </div>
-                    </section>
                     <section class="list-item-container">
                         <div class="list-item">
                             <img class="product-img" src="img/round-shelf.jpg" alt="shelf">
@@ -171,14 +173,14 @@
                             <p>$ 80.00</p>
                             <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
                         </div>
-                    </section> 
+                    </section>  -->
                 </section>
                 <section class="order-total">
                     <div class="order-date">
                         <p class="total">Total</p>
                     </div>
                     <div class="order-total-amount">
-                        <p id="my-order-total">$ 560.00</p>
+                        <p id="my-order-total">$ 10.00</p>
                     </div>
                 </section>
                 <div>
@@ -186,6 +188,7 @@
                 </div>
             </div>
         </aside>
+        <!-- SHOPPING CART VIEW - END -->
     </header>
     <section class="main-container">
         <div class="cards-container">
@@ -204,6 +207,7 @@
 
         </div>
     </section>
+    <!-- PRODUCT DETAILED VIEW -->
     <aside class="product-detail inactive" id="product-detailed">
         <div class="product-container">
             <img id="product-detail-close-icon" class="product-detail-close-icon" src="./icons/icon_close.png" alt="close">
@@ -219,6 +223,8 @@
             </button>
         </div>
     </aside>
+    <!-- PRODUCT DETAILED VIEW - END -->
+
     <script src="./main.js"></script>
 </body>
 </html> 

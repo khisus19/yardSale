@@ -17,6 +17,7 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    user-select: none;
 }
 .inactive {
     visibility: hidden;
@@ -211,7 +212,7 @@ nav {
     color: var(--hospital-green);
 }
 
-/* shopping CART MENU */
+/* SHOPPING CART MENU */
 .my-order {
     width: 100%;
     max-width: 480px;
@@ -230,7 +231,7 @@ nav {
     margin: 20px auto;
 }
 
-/* Primera Sección - Sección de tarjetas */
+/* CART MENU - SECT 1 - ITEMS */
 .order-list-container {
     margin: 30px auto;
     display: flex;
@@ -284,7 +285,7 @@ nav {
     font-weight: 300;
 }
 
-/* Segunda Sección - Sección de Resumen de Compra */
+/* CART MENU - SECT 2 - TOTAL */
 .order-total {
     height: 76px;
     padding: 15px;
@@ -330,6 +331,7 @@ nav {
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
 .cards-container .product-info {
     display: flex;
@@ -337,9 +339,12 @@ nav {
     align-items: center;
     margin-top: 12px;
 }
-.cards-container .product-info figure img {
+.cards-container .product-info .add-to-cart-button-container img {
     width: 40px;
     height: 40px;
+}
+.add-to-cart-button-container:hover {
+    cursor: pointer;
 }
 .product-price {
     font-size: var(--md);

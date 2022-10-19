@@ -1,3 +1,9 @@
+/* if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready)
+} else {
+  ready()
+} */
+
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const hamburguerIcon = document.querySelector('.nav-hamburguer');
@@ -32,6 +38,7 @@ function toggleShoppingCartMenu() {
   desktopMenu.classList.add('inactive');
   mobileMenu.classList.add('inactive');
   productDetailedAside.classList.add("inactive");
+  updateCartTotal()
 }
 function openProductDetailedAside() {
   productDetailedAside.classList.remove("inactive");
@@ -45,7 +52,21 @@ function closeProductDetailedAside() {
 }
 
 
-function renderProducts(arr) {
+const productList = [];
+
+async function getProducts() {
+  const res = await fetch("https://api.escuelajs.co/api/v1/products")
+  const data = await res.json();
+
+  for (let i = 0; i < 50; i++) {
+    productList.push(data[i])
+  }
+  await renderProducts(productList)
+}
+getProducts()
+
+async function renderProducts(arr) {
+  console.log(productList);
   for(product of arr) {
     const productArticle = document.createElement("article")
     productArticle.classList.add("product-card")
@@ -61,7 +82,7 @@ function renderProducts(arr) {
     const priceAndNameContainer = document.createElement("div")
 
     const productPrice = document.createElement("p")
-    productPrice.innerText = "$ " + product.price
+    productPrice.innerText = "$" + (product.price - 0.01)
     productPrice.classList.add("product-price")
 
     const productName = document.createElement("p")
@@ -69,8 +90,9 @@ function renderProducts(arr) {
     productName.classList.add("product-name")
 
     const productFigure = document.createElement("figure")
+    productFigure.setAttribute("class", "add-to-cart-button-container")
     const productIcon = document.createElement("img")
-    productIcon.setAttribute("src", "icons/bt_add_to_cart.svg")
+    productIcon.setAttribute("src", "icons/bt_add_to_cart.svg");
 
     productFigure.append(productIcon)
     productArticle.append(productImg, productInfoContainer)
@@ -79,20 +101,10 @@ function renderProducts(arr) {
 
     cardsContainer.appendChild(productArticle)
   }
+
+  getAddCartButtons()
 }
 
-const productList = [];
-
-async function getProducts() {
-  const res = await fetch("https://api.escuelajs.co/api/v1/products")
-  const data = await res.json();
-
-  for (let i = 0; i < 50; i++) {
-    productList.push(data[i])
-  }
-  renderProducts(productList)
-}
-getProducts()
 
 function renderProductDetailed(event) {
   let imgPath = event.target.src
@@ -143,10 +155,48 @@ function updateCartTotal() {
   for (let i = 0; i < cartItemsArray.length; i++) {
     const cartItem = cartItemsArray[i];
     const priceElement = cartItem.querySelector(".item-price-container p");
-    let price = parseFloat(priceElement.innerText.replace("$", ""));
-    total = total + price;
+    let price = Number(priceElement.innerText.replace("$", ""));
+    total = Math.round((total + price) * 100 ) / 100;
   }
-  total = total.toFixed(2)
   const cartTotalElement = document.getElementById("my-order-total")
-  cartTotalElement.innerText = "$" + total
+  cartTotalElement.innerText = "$" + total;
+}
+
+// ADD CART ITEMS
+
+function getAddCartButtons() {
+  const addToCartBtnsArray = document.querySelectorAll(".add-to-cart-button-container")
+  for (let i = 0; i < addToCartBtnsArray.length; i++) {
+    const button = addToCartBtnsArray[i]
+    button.addEventListener("click", getCartItemData)
+  }
+}
+
+function getCartItemData(event) {
+  const button = event.target
+  const productCard = button.parentElement.parentElement.parentElement
+  const imgSource = productCard.querySelector(".product-card > img").src
+  const title = productCard.querySelector(".product-name").innerText
+  const price = productCard.querySelector(".product-price").innerText
+  
+  addCartItem(title, imgSource, price)
+
+}
+
+function addCartItem(title, imgSource, price){
+  const cartItem = document.createElement("section")
+  cartItem.classList.add("list-item-container")
+  const cartItemList = document.querySelector("#order-list-container")
+  const cartItemContent = `<div class="list-item">
+                                  <img class="product-img" src="${imgSource}" alt="${title}">
+                                  <p>${title}</p>
+                            </div>
+                          <div class="item-price-container">
+                              <p>${price}</p>
+                              <img class="remove-order-item-icon" src="icons/icon_close.png" alt="close">
+                          </div>`;
+  cartItem.innerHTML = cartItemContent
+  cartItemList.append(cartItem)
+  updateCartTotal()
+
 }
