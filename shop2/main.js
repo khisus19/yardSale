@@ -117,7 +117,7 @@ function renderProductDetailed(event) {
 
 
   const productDetailedPrice = document.querySelector("#product-price");
-  productDetailedPrice.innerText = "$ " + productToDetail.price;
+  productDetailedPrice.innerText = "$ " + (productToDetail.price - 0.01);
 
   const productDetailedTitle = document.querySelector("#product-title");
   productDetailedTitle.innerText = productToDetail.title;
@@ -125,12 +125,7 @@ function renderProductDetailed(event) {
   const productDetailedDescription = document.querySelector(".product-description");
   productDetailedDescription.innerText = productToDetail.description;
 
-  const productDetailedButton = document.querySelector("#add-to-cart-button");
-  productDetailedButton.addEventListener("click", (event) => {
-    const id = event.target.parentElement.children[1].nextElementSibling.textContent
-    addItemToCart(id)
-  })
-
+  
   openProductDetailedAside()
 }
 
@@ -164,6 +159,9 @@ function updateCartTotal() {
   }
   const cartTotalElement = document.getElementById("my-order-total")
   cartTotalElement.innerText = "$" + total;
+
+  const shoppingCartNumber = document.querySelector(".shopping-cart_number")
+  shoppingCartNumber.innerText = cartItemsArray.length;
 }
 
 // ADD CART ITEMS
@@ -204,4 +202,22 @@ function addCartItem(title, imgSource, price){
   cartItemList.querySelector(".remove-order-item-icon").addEventListener("click", removeCartItem)
   updateCartTotal()
   addRemoveButtonsListener()
+}
+
+// ADD CART ITEMS FROM DETAILED VIEW
+function addListenerToDetailedButton() {
+  const buttonElement = document.getElementById("add-to-cart-button")
+  console.log(buttonElement);
+  buttonElement.addEventListener("click", getCartItemDataFromDetailed)
+}
+addListenerToDetailedButton()
+
+function getCartItemDataFromDetailed(event) {
+  const button = event.target
+  const productDetailed = button.parentElement.parentElement
+  const imgSource = productDetailed.querySelector(".product-img").src
+  const price = productDetailed.querySelector(".product-price").innerText
+  const title = productDetailed.querySelector(".product-title").innerText
+
+  addCartItem(title, imgSource, price)
 }

@@ -64,10 +64,11 @@ nav {
 }
 .shopping-cart_number {
     position: absolute;
-    width: 14px;
-    height: 14px;
-    font-size: 0.7rem;
-    top: -5px;
+    width: 20px;
+    height: 20px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    top: -9px;
     left: 12px;
     border-radius: 50%;
     background-color: var(--hospital-green);
@@ -281,6 +282,10 @@ nav {
     margin-left: 20px;
     cursor: pointer;
 }
+.remove-order-item-icon:active {
+    transform: scale(1.2);
+    translate: scale 0.3s;
+}
 .order-list-container .list-item:nth-child(1) {
     font-weight: 300;
 }
@@ -345,6 +350,10 @@ nav {
 }
 .add-to-cart-button-container:hover {
     cursor: pointer;
+}
+.add-to-cart-button-container:active {
+    transform: scale(.8);
+    /* transition: scale 0.4s; */
 }
 .product-price {
     font-size: var(--md);
@@ -450,6 +459,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.primary-button:active {
+    transform: scale(.95);
 }
 .cart-img {
     width: 35px;
