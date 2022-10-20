@@ -206,8 +206,7 @@ function addCartItem(title, imgSource, price){
 
 // ADD CART ITEMS FROM DETAILED VIEW
 function addListenerToDetailedButton() {
-  const buttonElement = document.getElementById("add-to-cart-button")
-  console.log(buttonElement);
+  const buttonElement = document.getElementById("add-to-cart-button");
   buttonElement.addEventListener("click", getCartItemDataFromDetailed)
 }
 addListenerToDetailedButton()
